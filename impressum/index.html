@@ -5,21 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Impressum | BU-Beratung Magdeburg</title>
   <meta name="description" content="Impressum der Agentur Torsten Römer – gesetzliche Anbieterkennzeichnung gemäß § 5 TMG." />
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <script src="/assets/js/main.js" defer></script>
+
+  <!-- Assets: aus Unterordner eine Ebene hoch -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/main.js" defer></script>
 </head>
+
 <body>
   <header aria-label="Kopfbereich">
     <div class="header-inner container">
-      <a href="/" class="brand" aria-label="Startseite">BU-Beratung Magdeburg</a>
+      <!-- Zur Startseite -->
+      <a href="../" class="brand" aria-label="Startseite">BU-Beratung Magdeburg</a>
+
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
-        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
       </button>
+
       <nav id="site-nav" aria-label="Hauptnavigation">
-        <a href="/">Start</a>
-        <a href="/kontakt">Kontakt</a>
-        <a href="/impressum" aria-current="page">Impressum</a>
-        <a href="/datenschutz">Datenschutz</a>
+        <a href="../">Start</a>
+        <a href="../kontakt/">Kontakt</a>
+        <a href="./" aria-current="page">Impressum</a>
+        <a href="../datenschutz/">Datenschutz</a>
       </nav>
     </div>
   </header>
@@ -43,7 +51,8 @@
     <p>
       Gebundener Versicherungsvertreter gemäß § 34d Abs. 7 S.1 Nr. 1 GewO (Bundesrepublik Deutschland).<br/>
       Vermittlerregisternummer: <strong>D-A1DT-EHQE9-20</strong><br/>
-      Eingetragen im Vermittlerregister: <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener">www.vermittlerregister.info</a>
+      Eingetragen im Vermittlerregister: 
+      <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener">www.vermittlerregister.info</a>
     </p>
 
     <h3>Zuständige Berufskammer</h3>
@@ -105,13 +114,15 @@
     <div class="container footer-inner">
       <p>&copy; <span id="y"></span> Agentur Torsten Römer</p>
       <nav>
-        <a href="/impressum">Impressum</a> |
-        <a href="/datenschutz">Datenschutz</a> |
-        <a href="/kontakt">Kontakt</a>
+        <a href="./">Impressum</a> |
+        <a href="../datenschutz/">Datenschutz</a> |
+        <a href="../kontakt/">Kontakt</a>
       </nav>
     </div>
   </footer>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
