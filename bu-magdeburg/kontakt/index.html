@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | Berufsunfähigkeitsversicherung Magdeburg</title>
+  <meta name="description" content="Kontaktiere uns für eine persönliche Beratung zur Berufsunfähigkeitsversicherung in Magdeburg. Unverbindlich & kostenlos.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js" defer></script>
+
+</head>
+<body>
+  <header aria-label="Kopfbereich">
+  <div class="header-inner container">
+    <a href="/" class="brand" aria-label="Startseite">BU-Beratung Magdeburg</a>
+
+    <!-- Mobile Toggle -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Hauptnavigation">
+      <a href="/">Start</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+</header>
+
+
+
+  <!-- Kontakt -->
+<section class="container section kontakt">
+  <h2>Jetzt kostenlose Beratung anfragen</h2>
+<div id="formAlert" class="form-alert" role="status" aria-live="polite"></div>
+  <div class="card contact-card">
+    <form id="contactForm" class="form" novalidate>
+      <!-- Honeypot: unsichtbar -->
+      <div class="hp" aria-hidden="true">
+        <label for="company">Bitte freilassen</label>
+        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+    <label for="email">E-Mail*</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      inputmode="email"
+      autocomplete="email"
+      required
+      placeholder="z. B. name@mail.de"
+      title="Bitte eine gültige E-Mail-Adresse eingeben."
+    >
+  </div>
+
+        <div class="field field--full">
+  <label for="phone">Telefon*</label>
+  <input
+    id="phone"
+    name="phone"
+    type="tel"
+    inputmode="tel"
+    autocomplete="tel"
+    placeholder="z. B. 0151 2345678"
+    pattern="(?=(?:\D*\d){7,})^[\d\s()+\/-]+$"
+    title="Bitte eine gültige Telefonnummer mit mindestens 7 Ziffern eingeben. Erlaubt: Ziffern, +, Leerzeichen, /, -, ( )."
+    aria-describedby="phoneHelp"
+    required
+  >
+  <small id="phoneHelp" class="hint subtle">Mind. 7 Ziffern, z. B. 0391 1234567 oder +49 391 1234567</small>
+</div>
+
+
+        <div class="field field--full">
+  <label for="message">Nachricht*</label>
+  <textarea
+    id="message"
+    name="message"
+    rows="6"
+    required
+    minlength="20"
+    placeholder="Deine Nachricht"
+  >Hallo, ich bitte um einen Rückruf für einen Termin zur Beratung zur Berufsunfähigkeitsversicherung. 
+Ich freue mich über einen Vorschlag für einen passenden Termin. 
+Vielen Dank!</textarea>
+  <small class="hint subtle">Text gerne anpassen (mind. 20 Zeichen).</small>
+</div>
+
+
+
+        <label class="consent field field--full">
+  <input type="checkbox" id="consent" name="consent" required>
+  <span class="consent-text">Ich habe die <a href="/datenschutz">Datenschutzhinweise</a> gelesen.</span>
+</label>
+
+      </div>
+
+      <button type="submit" class="btn btn--primary">Absenden</button>
+      <p id="formStatus" class="form-status subtle" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <p>&copy; 2025 Berufsunfähigkeitsversicherung Magdeburg</p>
+      <nav>
+        <a href="/impressum">Impressum</a> |
+        <a href="/datenschutz">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
