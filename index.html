@@ -31,8 +31,43 @@
   <meta name="twitter:image" content="assets/img/og-bu-magdeburg.jpg" />
 
   <!-- Schema.org -->
-  <script type="application/ld+json">{ "@context": "https://schema.org", "@type": "InsuranceAgency", "name": "Berufsunfähigkeitsversicherung Magdeburg – Beratung", "image": "https://berufsunfaehigkeitsversicherung-magdeburg.de/assets/img/og-bu-magdeburg.jpg", "url": "https://berufsunfaehigkeitsversicherung-magdeburg.de/", "telephone": "+49-0000-000000", "address": { "@type": "PostalAddress", "streetAddress": "(Deine Straße) 1", "addressLocality": "Wolmirstedt", "postalCode": "39326", "addressRegion": "Sachsen-Anhalt", "addressCountry": "DE" }, "areaServed": [ { "@type": "City", "name": "Magdeburg" }, { "@type": "City", "name": "Wolmirstedt" }, { "@type": "City", "name": "Barleben" }, { "@type": "City", "name": "Haldensleben" }, { "@type": "City", "name": "Schönebeck" } ], "priceRange": "€€" }</script>
-  <script type="application/ld+json">{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Brauche ich überhaupt eine Berufsunfähigkeitsversicherung?", "acceptedAnswer": { "@type": "Answer", "text": "Eine BU sichert dein Einkommen, wenn du deinen Beruf krankheits- oder unfallbedingt dauerhaft nicht mehr ausüben kannst. Ohne BU muss dein Lebensstandard oft deutlich reduziert werden – die BU-Rente fängt genau dieses Risiko ab." } }, { "@type": "Question", "name": "Wie hoch sollte meine BU-Rente sein?", "acceptedAnswer": { "@type": "Answer", "text": "Orientiere dich an deinen monatlichen Fixkosten plus Sicherheitspuffer. Häufig sind 60–80 % deines Nettoeinkommens ein sinnvoller Ausgangspunkt. Ich rechne das mit dir sauber durch." } } ] }</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "InsuranceAgency",
+    "name": "Berufsunfähigkeitsversicherung Magdeburg – Beratung",
+    "image": "https://berufsunfaehigkeitsversicherung-magdeburg.de/assets/img/og-bu-magdeburg.jpg",
+    "url": "https://berufsunfaehigkeitsversicherung-magdeburg.de/",
+    "telephone": "+49-0000-000000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "(Deine Straße) 1",
+      "addressLocality": "Wolmirstedt",
+      "postalCode": "39326",
+      "addressRegion": "Sachsen-Anhalt",
+      "addressCountry": "DE"
+    },
+    "areaServed": [
+      {"@type":"City","name":"Magdeburg"},
+      {"@type":"City","name":"Wolmirstedt"},
+      {"@type":"City","name":"Barleben"},
+      {"@type":"City","name":"Haldensleben"},
+      {"@type":"City","name":"Schönebeck"}
+    ],
+    "priceRange": "€€"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Brauche ich überhaupt eine Berufsunfähigkeitsversicherung?","acceptedAnswer":{"@type":"Answer","text":"Eine BU sichert dein Einkommen, wenn du deinen Beruf krankheits- oder unfallbedingt dauerhaft nicht mehr ausüben kannst. Ohne BU muss dein Lebensstandard oft deutlich reduziert werden – die BU-Rente fängt genau dieses Risiko ab."}},
+      {"@type":"Question","name":"Wie hoch sollte meine BU-Rente sein?","acceptedAnswer":{"@type":"Answer","text":"Orientiere dich an deinen monatlichen Fixkosten plus Sicherheitspuffer. Häufig sind 60–80 % deines Nettoeinkommens ein sinnvoller Ausgangspunkt. Ich rechne das mit dir sauber durch."}}
+    ]
+  }
+  </script>
 
   <!-- Kleine lokale Styles -->
   <style>
@@ -51,6 +86,8 @@
     .hero .btn{font-size:1.05rem}
     .grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem}
     @media (max-width: 860px){.grid-2{grid-template-columns:1fr}}
+    /* Sichtbarkeits-Fallback, falls JS nicht lädt */
+    .reveal, .reveal--up, .reveal--left, .reveal--right {opacity:1 !important; transform:none !important;}
   </style>
 
   <!-- JS -->
@@ -61,12 +98,8 @@
   <header aria-label="Kopfbereich">
     <div class="header-inner container">
       <a href="./" class="brand" aria-label="Startseite">Deine BU – Einfach erklärt.</a>
-
-      <!-- Mobile Toggle -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
       </button>
 
       <nav id="site-nav" aria-label="Hauptnavigation">
@@ -82,21 +115,90 @@
   <section class="hero" role="banner" aria-labelledby="hero-title">
     <div class="container hero__inner">
       <p class="badge reveal reveal--up">Magdeburg • Wolmirstedt • Umgebung</p>
-      <h1 id="hero-title">Berufsunfähigkeits&shy;versicherung in Magdeburg – einfach, verständlich, passend zu dir</h1>
-      <p class="subtle hero__subtitle">Dein Einkommen ist die Basis für alles. Ich helfe dir, es mit der richtigen BU zu schützen – persönlich, transparent und ohne Fachchinesisch.</p>
+      <h1 id="hero-title" class="reveal reveal--up">Berufsunfähigkeits&shy;versicherung in Magdeburg – einfach, verständlich, passend zu dir</h1>
+      <p class="subtle hero__subtitle reveal reveal--up">Dein Einkommen ist die Basis für alles. Ich helfe dir, es mit der richtigen BU zu schützen – persönlich, transparent und ohne Fachchinesisch.</p>
       <div class="buttons">
-        <a href="kontakt/" class="btn btn--primary">Kostenfreie Erstberatung sichern</a>
-        <a href="#wie-funktioniert" class="btn btn--ghost">BU in 2 Minuten verstehen</a>
+        <a href="kontakt/" class="btn btn--primary reveal reveal--up">Kostenfreie Erstberatung sichern</a>
+        <a href="#wie-funktioniert" class="btn btn--ghost reveal reveal--up">BU in 2 Minuten verstehen</a>
       </div>
     </div>
   </section>
 
-  <!-- (Inhalt bleibt identisch) -->
-  <!-- Deine restlichen Sections können unverändert bleiben -->
+  <!-- ÜBER UNS -->
+  <section class="container section" id="ueber-mich">
+    <h2 class="reveal reveal--up">Über uns</h2>
+    <div class="grid-2">
+      <div class="reveal reveal--up">
+        <p>Hi, wir sind Versicherungsvermittler aus Wolmirstedt. Wir mögen es effizient, verständlich und praxisnah. In der Beratung bekommst du keine Floskeln, sondern klare Empfehlungen und saubere Umsetzung. Unser Anspruch: <em>Du verstehst deine Absicherung und fühlst dich gut damit.</em></p>
+        <p class="subtle">Auf Wunsch per Video, Telefon oder vor Ort. Termine auch abends.</p>
+        <a href="kontakt/" class="btn btn--primary reveal reveal--up">Termin anfragen</a>
+      </div>
+      <figure class="card reveal reveal--right" style="text-align:center">
+        <img src="assets/img/team-bu-magdeburg.jpg" alt="BU-Beratung Magdeburg Team" style="width:100%;border-radius:8px;">
+        <figcaption class="subtle">Deine Ansprechpartner für BU in Magdeburg & Umgebung</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- WARUM BU -->
+  <section class="container section" id="warum-bu">
+    <h2 class="reveal reveal--up">Warum eine BU so wichtig ist</h2>
+    <div class="process">
+      <div class="card reveal reveal--up">
+        <strong>Existenz sichern</strong>
+        <p class="subtle">Fällt dein Einkommen weg, bleiben Miete, Kredite & Lebenshaltung bestehen. Die BU-Rente fängt dieses Risiko ab.</p>
+      </div>
+      <div class="card reveal reveal--up">
+        <strong>Unabhängig von der Ursache</strong>
+        <p class="subtle">Ob Unfall, Krankheit oder psychische Belastung – entscheidend ist, ob du deinen Beruf dauerhaft nicht mehr zu 50 % ausüben kannst.</p>
+      </div>
+      <div class="card reveal reveal--up">
+        <strong>Flexibel & anpassbar</strong>
+        <p class="subtle">Rentenhöhe, Laufzeit und Nachversicherung lassen sich an deine Lebenssituation anpassen – heute und später.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BU FUNKTIONIERT -->
+  <section class="container section" id="wie-funktioniert">
+    <h2 class="reveal reveal--up">So funktioniert die BU – kurz erklärt</h2>
+    <div class="grid-2">
+      <div class="card reveal reveal--left">
+        <h3>Das Prinzip</h3>
+        <ul class="list-check">
+          <li><strong>BU-Rente:</strong> Zahlung, wenn du deinen Beruf dauerhaft nicht mehr ausüben kannst.</li>
+          <li><strong>Beitragsbefreiung:</strong> Im Leistungsfall übernimmt der Versicherer deine Beiträge.</li>
+          <li><strong>Laufzeit & Höhe:</strong> Du wählst Rentenhöhe und Laufzeit.</li>
+          <li><strong>Nachversicherung:</strong> Spätere Erhöhung oft ohne neue Gesundheitsprüfung.</li>
+        </ul>
+      </div>
+      <div class="card reveal reveal--right">
+        <h3>Worauf wir gemeinsam achten</h3>
+        <ul class="list-check">
+          <li><strong>Gesundheitsangaben:</strong> vollständig & korrekt – auf Wunsch anonym.</li>
+          <li><strong>Berufsgruppe:</strong> fair eingestuft = fairer Beitrag.</li>
+          <li><strong>Leistungsdefinitionen:</strong> Verweisung, Prognosezeitraum, Arztanordnung.</li>
+          <li><strong>Optionen:</strong> Dynamik, AU-Klausel, Stabilität.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" aria-labelledby="cta-head">
+    <div class="container">
+      <h2 id="cta-head" class="reveal reveal--up">Starte heute – für Ruhe im Kopf morgen</h2>
+      <p class="subtle reveal reveal--up">Wir zeigen dir, wie du dich sinnvoll gegen Berufsunfähigkeit absicherst – klar, fair und auf Augenhöhe.</p>
+      <a href="kontakt/" class="btn btn--primary reveal reveal--up">Jetzt Erstberatung vereinbaren</a>
+      <p style="margin-top:.75rem;font-size:.95rem;" class="subtle reveal reveal--up">Antwort innerhalb von 24 Stunden • Beratung in Magdeburg, Wolmirstedt & Umgebung</p>
+    </div>
+  </section>
 
   <footer>
     <div class="container footer-inner">
-      <p>&copy; <span id="y"></span> Webdesign: <a href="https://r3webdesign.de" target="_blank" rel="noopener">r<sup>3</sup>webdesign.de</a></p>
+      <p>&copy; <span id="y"></span> Webdesign: 
+        <a href="https://r3webdesign.de" target="_blank" rel="noopener">r<sup>3</sup>webdesign.de</a>
+      </p>
       <nav aria-label="Fußnavigation">
         <a href="impressum/">Impressum</a> |
         <a href="datenschutz/">Datenschutz</a> |
