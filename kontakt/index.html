@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontakt | Berufsunfähigkeitsversicherung Magdeburg</title>
-  <meta name="description" content="Kontaktiere uns für eine persönliche Beratung zur Berufsunfähigkeitsversicherung in Magdeburg. Unverbindlich & kostenlos.">
+  <meta name="description" content="Kontaktiere uns für eine persönliche Beratung zur Berufsunfähigkeitsversicherung in Magdeburg. Unverbindlich & kostenlos." />
 
-  <!-- Assets: aus Unterordner eine Ebene hoch -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- Styles & Script -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
   <header aria-label="Kopfbereich">
     <div class="header-inner container">
-      <!-- Zur Startseite: eine Ebene hoch -->
       <a href="../" class="brand" aria-label="Startseite">BU-Beratung Magdeburg</a>
 
-      <!-- Mobile Toggle -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -25,30 +23,32 @@
 
       <nav id="site-nav" aria-label="Hauptnavigation">
         <a href="../">Start</a>
-        <a href="./">Kontakt</a>
+        <a href="./" aria-current="page">Kontakt</a>
         <a href="../impressum/">Impressum</a>
         <a href="../datenschutz/">Datenschutz</a>
       </nav>
     </div>
   </header>
 
-  <!-- Kontakt -->
   <section class="container section kontakt">
     <h2>Jetzt kostenlose Beratung anfragen</h2>
-    <div id="formAlert" class="form-alert" role="status" aria-live="polite"></div>
+    <p class="subtle" style="margin-bottom:1.5rem;">Fülle das Formular aus und wir melden uns innerhalb von 24 Stunden.</p>
 
+    <!-- Web3Forms Formular -->
     <div class="card contact-card">
-      <form id="contactForm" class="form" novalidate>
-        <!-- Honeypot: unsichtbar -->
-        <div class="hp" aria-hidden="true">
-          <label for="company">Bitte freilassen</label>
-          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
-        </div>
+      <form id="contactForm" class="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <!-- Web3Forms API -->
+        <input type="hidden" name="access_key" value="d544bd39-97c0-4398-b1b7-3bc12ac7c465" />
+        <input type="hidden" name="from_name" value="BU Microsite" />
+        <input type="hidden" name="subject" value="Neue Anfrage über BU-Magdeburg.de" />
+
+        <!-- Honeypot -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" style="display:none;" />
 
         <div class="form-grid">
           <div class="field">
             <label for="name">Name*</label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
+            <input type="text" id="name" name="name" autocomplete="name" required />
           </div>
 
           <div class="field">
@@ -61,7 +61,8 @@
               autocomplete="email"
               required
               placeholder="z. B. name@mail.de"
-              title="Bitte eine gültige E-Mail-Adresse eingeben.">
+              title="Bitte eine gültige E-Mail-Adresse eingeben."
+            />
           </div>
 
           <div class="field field--full">
@@ -73,11 +74,11 @@
               inputmode="tel"
               autocomplete="tel"
               placeholder="z. B. 0151 2345678"
-              pattern="(?=(?:\D*\d){7,})^[\d\s()+\/-]+$"
-              title="Bitte eine gültige Telefonnummer mit mindestens 7 Ziffern eingeben. Erlaubt: Ziffern, +, Leerzeichen, /, -, ( )."
-              aria-describedby="phoneHelp"
-              required>
-            <small id="phoneHelp" class="hint subtle">Mind. 7 Ziffern, z. B. 0391 1234567 oder +49 391 1234567</small>
+              pattern="(?=(?:\\D*\\d){7,})^[\\d\\s()+\\/-]+$"
+              title="Bitte eine gültige Telefonnummer mit mindestens 7 Ziffern eingeben."
+              required
+            />
+            <small class="hint subtle">Mind. 7 Ziffern, z. B. 0391 1234567 oder +49 391 1234567</small>
           </div>
 
           <div class="field field--full">
@@ -88,15 +89,18 @@
               rows="6"
               required
               minlength="20"
-              placeholder="Deine Nachricht">Hallo, ich bitte um einen Rückruf für einen Termin zur Beratung zur Berufsunfähigkeitsversicherung. 
+              placeholder="Deine Nachricht"
+            >Hallo, ich bitte um einen Rückruf für einen Termin zur Beratung zur Berufsunfähigkeitsversicherung. 
 Ich freue mich über einen Vorschlag für einen passenden Termin. 
 Vielen Dank!</textarea>
             <small class="hint subtle">Text gerne anpassen (mind. 20 Zeichen).</small>
           </div>
 
           <label class="consent field field--full">
-            <input type="checkbox" id="consent" name="consent" required>
-            <span class="consent-text">Ich habe die <a href="../datenschutz/">Datenschutzhinweise</a> gelesen.</span>
+            <input type="checkbox" id="consent" name="consent" required />
+            <span class="consent-text">
+              Ich habe die <a href="../datenschutz/">Datenschutzhinweise</a> gelesen.
+            </span>
           </label>
         </div>
 
@@ -108,12 +112,44 @@ Vielen Dank!</textarea>
 
   <footer>
     <div class="container footer-inner">
-      <p>&copy; 2025 Berufsunfähigkeitsversicherung Magdeburg</p>
+      <p>&copy; <span id="y"></span> Berufsunfähigkeitsversicherung Magdeburg</p>
       <nav>
         <a href="../impressum/">Impressum</a> |
         <a href="../datenschutz/">Datenschutz</a>
       </nav>
     </div>
   </footer>
+
+  <script>
+    // Jahr automatisch
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Web3Forms asynchroner Versand (ohne Reload)
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      status.textContent = "Sende Anfrage...";
+
+      try {
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          status.textContent = "✅ Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.";
+          form.reset();
+        } else {
+          status.textContent = "❌ Fehler beim Senden. Bitte versuche es erneut.";
+        }
+      } catch (error) {
+        status.textContent = "❌ Es ist ein Problem aufgetreten. Bitte später erneut versuchen.";
+      }
+    });
+  </script>
 </body>
 </html>
