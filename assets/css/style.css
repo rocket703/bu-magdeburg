@@ -363,3 +363,145 @@ footer a:hover{ color:var(--text); text-decoration:underline; }
 
 /* Optional: Schlagworte in der Liste betonen */
 #fehler-vermeiden strong{ color:#0f172a; }
+/* ==== BU Magdeburg – Sand/Braun Theme (Light only) ==== */
+html { color-scheme: light !important; }
+
+:root{
+  /* Grundflächen */
+  --bg:        #F6F1E7;  /* sand-100: Haupt-Hintergrund */
+  --bg-soft:   #EFE7DA;  /* sand-200: weichere Sektionen / Hero-Füllung */
+  --surface:   #FFFFFF;  /* Karten, Formularfelder */
+
+  /* Text */
+  --text:      #2B2A28;  /* sehr dunkles Warmgrau */
+  --text-soft: #5E5A54;  /* dezentes Warmgrau */
+
+  /* Akzente (Braun) */
+  --brown-300: #C8a27a;  /* helles Braun (Hover/Badge hell) */
+  --brown-400: #AE8256;  /* mittleres Braun */
+  --brown-600: #7B5535;  /* Primär-Braun (Buttons) */
+  --brown-700: #69472B;  /* Hover / kräftiger */
+  --brown-800: #4A301B;  /* sehr dunkel (Kontrast/Outline) */
+
+  /* Primär-Mapping (ersetzt Blau) */
+  --primary:      var(--brown-600);
+  --primary-600:  var(--brown-700);
+
+  /* Linien/Schatten/Ring */
+  --muted:   #E5DED2;    /* zarte Linie auf Sand */
+  --ring:    rgba(123,85,53,.35);
+}
+
+/* Flächen & Standardfarben aktualisieren */
+body{ background:var(--bg) !important; color:var(--text) !important; }
+.container p{ color:var(--text-soft); }
+
+/* Header/Footer auf Sand */
+header, footer{
+  background: color-mix(in oklab, var(--bg) 92%, #fff 8%) !important;
+  border-color: var(--muted) !important;
+}
+
+/* Karten/Formulare */
+.card{
+  background: var(--surface) !important;
+  border: 1px solid var(--muted) !important;
+  box-shadow: 0 8px 24px rgba(42,34,26,.06) !important;
+}
+input, textarea, select{
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg) 4%) !important;
+  border-color: var(--muted) !important;
+}
+
+/* Hero: Bild bleibt, Overlay in warmem Braun für Lesbarkeit */
+.hero{
+  background: var(--bg-soft) !important; /* Fallback, falls kein Bild */
+}
+.hero::before{
+  background: linear-gradient(to bottom, rgba(74,48,27,.42), rgba(74,48,27,.32)) !important;
+}
+.hero h1{ color:#fff !important; }
+.hero .hero__subtitle, .hero .badge{ color:#fff !important; }
+
+/* Badge: warm & lesbar auf Bild */
+.badge{
+  background: rgba(74,48,27,.65) !important; /* braunes Glas */
+  color:#fff !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+}
+
+/* Buttons: Braun-Primär + „Ghost“ in warm */
+.btn{
+  box-shadow: 0 6px 18px rgba(74,48,27,.18) !important;
+}
+.btn--primary{
+  background: var(--primary) !important; color:#fff !important;
+}
+.btn--primary:hover{ background: var(--primary-600) !important; }
+.btn--ghost{
+  background: transparent !important;
+  color: #fff !important; /* im Hero auf Bild */
+  border: 2px solid rgba(255,255,255,.85) !important;
+}
+@media (prefers-color-scheme: dark){ html{ color-scheme: light !important; } } /* bleib hell */
+
+/* Listen-Icons: Checks in warmem Braun-Grün? -> rein Braun für Konsistenz */
+.list-check li::before{
+  content:"✔";
+  color:#fff;
+  background: linear-gradient(135deg, var(--brown-600), var(--brown-700)) !important;
+  box-shadow: 0 4px 12px rgba(74,48,27,.28) !important;
+}
+
+/* Fehler-X (bleibt rot, passt gut zum Braun) – falls du’s wärmer willst, leicht terracotta: */
+.list-check.list-cross li::before{
+  background: radial-gradient(circle at 30% 30%, #D7634C, #A73B2A) !important;
+}
+
+/* Links/hover (Text) – dezentes Braun */
+main a, .container a:not(.btn):not(nav a){
+  color: var(--brown-700);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+main a:hover{ color: var(--brown-800); }
+
+/* CTA-Bereich sandig */
+.cta{
+  background:
+    linear-gradient(180deg, rgba(174,130,86,.08), rgba(200,162,122,.06)),
+    var(--bg-soft) !important;
+  border-block: 1px solid var(--muted) !important;
+}
+
+/* Ränder & Divider allgemein */
+hr{ border-color: var(--muted) !important; }
+
+/* Fokus-Ring warm */
+:where(a,button,input,textarea,summary):focus-visible{
+  outline:3px solid var(--ring) !important;
+}
+details[open] {
+  background-color: #f4e8d3; /* Sandton */
+  border: 1px solid #e0c8a0;
+  color: #3a2f27;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+details[open] summary {
+  font-weight: 600;
+  color: #2f241b;
+}
+/* === FAQ Sand/Braun Override === */
+.faq details[open]{
+  background: #f4e8d3 !important;   /* Sand hell */
+  color: #2f241b;                    /* Text in Braun */
+}
+
+.faq details[open] > summary{
+  color: #2f241b !important;
+}
+
+.faq details[open] > *:not(summary){
+  color: #3a2f27;                    /* Body-Text leicht dunkler */
+}
