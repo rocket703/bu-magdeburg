@@ -94,7 +94,7 @@ header .header-inner{
    ======================= */
 .hero{
   position:relative; isolation:isolate;
-  background-image: url("../assets/img/team-4529717_1280.jpg");
+  background-image: url("assets/img/team-4529717_1280.jpg");
   background-size:cover; background-position:center; background-repeat:no-repeat;
   padding-block:clamp(3rem, 8vw, 6rem);
 }
