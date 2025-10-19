@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://berufsunfaehigkeitsversicherung-magdeburg.de/sitemap.xml
+Sitemap: https://xn--berufsunfhigkeitsversicherung-magdeburg-tjd.de/sitemap.xml
+
