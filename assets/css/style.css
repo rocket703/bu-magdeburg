@@ -94,7 +94,7 @@ header .header-inner{
    ======================= */
 .hero{
   position:relative; isolation:isolate;
-  background-image: url("../img/team-4529717_1280.jpg") !important;
+  background-image: url("assets/img/team-4529717_1280.jpg");
   background-size:cover; background-position:center; background-repeat:no-repeat;
   padding-block:clamp(3rem, 8vw, 6rem);
 }
@@ -138,13 +138,6 @@ header .header-inner{
   .hero .buttons{ display:flex; flex-direction:column; }
   .hero .btn{ width:100%; }
 }
-/* Stelle sicher, dass dies NACH allen Hero-Regeln kommt */
-.hero{
-  background-color: var(--bg-soft);
-  background-image: url("assets/img/team-4529717_1280.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
 /* =======================
    Buttons
@@ -418,11 +411,6 @@ header, footer{
 input, textarea, select{
   background: color-mix(in oklab, var(--surface) 96%, var(--bg) 4%) !important;
   border-color: var(--muted) !important;
-}
-
-/* Hero: Bild bleibt, Overlay in warmem Braun für Lesbarkeit */
-.hero{
-  background: var(--bg-soft) !important; /* Fallback, falls kein Bild */
 }
 .hero::before{
   background: linear-gradient(to bottom, rgba(74,48,27,.42), rgba(74,48,27,.32)) !important;
