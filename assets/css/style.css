@@ -258,13 +258,11 @@ h3{ font-size:clamp(1.05rem, .95rem + 1.3vw, 1.25rem); margin:.2rem 0 .4rem; col
 }
 .faq details[open]{
   background:#f4e8d3;                /* Sand hell */
-  border-color:#e0c8a0;
   color:#2f241b;
 }
 .faq details[open] > summary{ color:#2f241b; }
 .faq details[open] > *:not(summary){ color:#3a2f27; }
 .faq summary{ cursor:pointer; font-weight:700; color:var(--text); }
-.faq details summary:hover{ background:#f1dfc3; }
 
 /* =======================
    CTA
