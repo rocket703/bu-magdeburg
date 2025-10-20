@@ -370,3 +370,20 @@ footer a:hover{ color:var(--text); text-decoration:underline; }
   overflow: hidden !important;
   visibility: hidden !important;
 }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;              /* Abstand zwischen Logo & Text */
+  font-weight: 600;
+  font-family: "Sora", sans-serif;
+  color: var(--text, #1b1b1b);
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;       /* optional: weiche Ecken */
+  object-fit: contain;
+  vertical-align: middle;
+}
