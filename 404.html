@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Seite nicht gefunden | Berufsunfähigkeitsversicherung Magdeburg</title>
   <meta name="description" content="Die gesuchte Seite wurde nicht gefunden. Zurück zur Startseite der Berufsunfähigkeitsberatung Magdeburg." />
-  <link rel="canonical" href="https://berufsunfähigkeitsversicherung-magdeburg.de/404.html" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/style.css" />
@@ -15,43 +14,105 @@
   <meta name="theme-color" content="#004aad" />
 
   <style>
+    :root {
+      --overlay: rgba(0,0,0,.45);
+    }
+
     body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
+    /* === HERO als Bild-Hintergrund === */
     main {
       flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      place-items: center;
+      position: relative;
+      min-height: 70vh;
+      overflow: hidden;
       text-align: center;
       padding: 3rem 1rem;
+      color: #fff;
+      isolation: isolate; /* damit z-index sauber funktioniert */
+    }
+    /* Hintergrundbild */
+    main::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(var(--overlay), var(--overlay)),
+        url("/assets/img/laundry-413688_1280.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      z-index: -2;
+      transform: scale(1.03); /* leichte Überfüllung gegen Kanten */
+    }
+    /* leichte Vignette für bessere Kontraste */
+    main::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.35) 100%);
+      z-index:-1;
+    }
+
+    /* Content-Box (zentriert) */
+    .error-content{
+      max-width: 780px;
+      margin: 0 auto;
+      backdrop-filter: blur(2px);
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: .5rem;
+      line-height: 1.1;
+      letter-spacing: .5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,.35);
     }
 
     p.subtle {
-      margin-bottom: 2rem;
-      opacity: .9;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      opacity: .95;
     }
 
-    .illustration {
-      max-width: 240px;
-      margin: 2rem auto;
-      opacity: 0.8;
+    /* Buttons auf dunklem Hintergrund */
+    .btn-on-dark{
+      display:inline-block;
+      padding:.9rem 1.25rem;
+      border-radius: .75rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .15s ease, opacity .15s ease;
     }
+    .btn-on-dark.primary{
+      background:#fff;
+      color:#1b1b1b;
+    }
+    .btn-on-dark.ghost{
+      background: transparent;
+      border: 2px solid rgba(255,255,255,.8);
+      color:#fff;
+      margin-left:.5rem;
+    }
+    .btn-on-dark:hover{ transform: translateY(-1px); opacity: .95; }
 
     footer {
       background: var(--secondary);
-      color: #fff;
+      color: #2c2c2c;
       padding: 1.25rem 0;
       text-align: center;
       font-size: .95rem;
+    }
+
+    /* Reduktion von Effekten für Nutzer mit Bewegungspräferenz */
+    @media (prefers-reduced-motion: reduce){
+      .btn-on-dark:hover{ transform:none; }
     }
   </style>
 </head>
@@ -69,22 +130,30 @@
   </header>
 
   <main class="container">
-    <div>
+    <div class="error-content">
       <h1>404</h1>
       <p class="subtle">Die Seite wurde leider nicht gefunden.</p>
-
-      <img src="assets/img/laundry-413688_1280.jpg" alt="Symbolbild Berufsunfähigkeitsberatung" class="illustration" loading="lazy">
-
       <p>Vielleicht wurde sie verschoben oder der Link ist veraltet.</p>
       <div style="margin-top:2rem;">
-        <a href="/" class="btn btn--primary">Zur Startseite</a>
-        <a href="/kontakt" class="btn btn--ghost" style="margin-left:.5rem;">Kontakt aufnehmen</a>
+        <a href="/" class="btn-on-dark primary">Zur Startseite</a>
+        <a href="/kontakt" class="btn-on-dark ghost">Kontakt aufnehmen</a>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; <span id="y"></span> Berufsunfähigkeitsversicherung Magdeburg – Beratung</p>
+    <div class="container footer-inner">
+      <p>&copy; <span id="y"></span> Webdesign: <a href="https://r3webdesign.de"
+     class="footer-brand-link"
+     target="_blank" rel="noopener">
+    r<sup class="sup3">3</sup>webdesign.de
+  </a></p>
+      <nav aria-label="Fußnavigation">
+        <a href="impressum/">Impressum</a> |
+        <a href="datenschutz/">Datenschutz</a> |
+        <a href="kontakt/">Kontakt</a>
+      </nav>
+    </div>
   </footer>
 
   <script>
