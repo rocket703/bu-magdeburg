@@ -7,28 +7,28 @@ html { color-scheme: light !important; }
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2');
+  src: url('assets/fonts/inter-v20-latin-regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2');
+  src: url('assets/fonts/inter-v20-latin-500.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2');
+  src: url('assets/fonts/inter-v20-latin-600.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../fonts/inter-v20-latin-700.woff2') format('woff2');
+  src: url('assets/fonts/inter-v20-latin-700.woff2') format('woff2');
 }
 
 @font-face {
@@ -36,14 +36,14 @@ html { color-scheme: light !important; }
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../fonts/sora-v17-latin-600.woff2') format('woff2');
+  src: url('assets/fonts/sora-v17-latin-600.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Sora';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../fonts/sora-v17-latin-700.woff2') format('woff2');
+  src: url('assets/fonts/sora-v17-latin-700.woff2') format('woff2');
 }
 /* Globales Mapping */
 body {
