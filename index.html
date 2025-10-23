@@ -171,23 +171,40 @@
 
 
 <!-- ABOUT -->
-  <section class="container section" id="ueber-mich" aria-labelledby="about-head">
-    <h2 id="about-head" class="reveal reveal--up">Über uns</h2>
-    <div class="grid-2">
-      <div class="reveal reveal--up" data-delay=".0s">
-        <p>Hi, wir sind Versicherungsvermittler aus Wolmirstedt. Wir mögen es effizient, verständlich und praxisnah. In der Beratung bekommst du keine Floskeln, sondern klare Empfehlungen und saubere Umsetzung.Unser Anspruch: <em>Du verstehst deine Absicherung und fühlst dich gut damit.</em></p>
-        <p class="subtle">Auf Wunsch per Video, Telefon oder vor Ort. Termine auch abends.</p>
-        <a href="kontakt/" class="btn btn--primary reveal reveal--up" data-delay=".08s">Termin anfragen</a>
-      </div>
-      <figure class="card reveal reveal--right" data-delay=".06s" style="text-align:center">
-  <img 
-    src="assets/img/Teambild.webp" 
-    alt="Deine Ansprechpartner für BU in Magdeburg & Umgebung" 
-    style="width:120px; border-radius:8px;"
-  >
-</figure>
+<section class="container section" id="ueber-mich" aria-labelledby="about-head">
+  <h2 id="about-head" class="reveal reveal--up">Über uns</h2>
+
+  <div class="grid-2">
+    <div class="reveal reveal--up" data-delay=".0s">
+      <p>Hi, wir sind Versicherungsvermittler aus Wolmirstedt. Wir mögen es effizient, verständlich und praxisnah. In der Beratung bekommst du keine Floskeln, sondern klare Empfehlungen und saubere Umsetzung. Unser Anspruch: <em>Du verstehst deine Absicherung und fühlst dich gut damit.</em></p>
+      <p class="subtle">Auf Wunsch per Video, Telefon oder vor Ort. Termine auch abends.</p>
+      <a href="kontakt/" class="btn btn--primary reveal reveal--up" data-delay=".08s">Termin anfragen</a>
     </div>
-  </section>
+
+    <figure class="card reveal reveal--right about-image" data-delay=".06s" role="group" aria-label="Teamfoto">
+      <picture>
+        <!-- WebP-Varianten -->
+        <source
+          type="image/webp"
+          srcset="
+            assets/img/Teambild-320.webp 320w,
+            assets/img/Teambild-480.webp 480w,
+            assets/img/Teambild-768.webp 768w,
+            assets/img/Teambild-1200.webp 1200w"
+          sizes="(min-width: 960px) 420px, (min-width: 600px) 360px, 90vw" />
+        <!-- Fallback (optional) -->
+        <img
+          src="assets/img/Teambild-768.jpg"
+          alt="Deine Ansprechpartner für BU in Magdeburg & Umgebung"
+          loading="lazy"
+          decoding="async"
+          class="about-image__img" />
+      </picture>
+     <figcaption class="sr-only">Deine Ansprechpartner für BU in Magdeburg & Umgebung</figcaption>
+    </figure>
+  </div>
+</section>
+
 
   <!-- WHY BU -->
   <section class="container section" id="warum-bu">
