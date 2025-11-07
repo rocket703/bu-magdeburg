@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://zahnzusatzversicherung-magdeburg.de/sitemap.xml
+Sitemap: https://berufsunfähigkeitsversicherung-magdeburg.de/sitemap.xml
