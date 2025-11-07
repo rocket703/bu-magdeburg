@@ -454,4 +454,91 @@ footer a:hover{ color:var(--text); text-decoration:underline; }
 .about-figure {
   text-align: center;
 }
+.text-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(38,184,155,.35); /* feine Linie */
+  padding-bottom: 1px;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--brown-800);
+  border-bottom-color: currentColor;
+}
+.backlink-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.backlink-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: color-mix(in oklab, var(--primary) 10%, #ffffff 90%);
+  color: var(--brown-800);
+  border: 1px solid color-mix(in oklab, var(--primary) 35%, #ffffff 65%);
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.backlink-pill:hover,
+.backlink-pill:focus-visible {
+  background: color-mix(in oklab, var(--primary) 16%, #ffffff 84%);
+  box-shadow: 0 6px 18px rgba(26, 134, 113, 0.16);
+  transform: translateY(-1px);
+}
+
+.backlink-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.about-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Grid-Bereiche definieren (für alle Größen) */
+.about-text--top {
+  grid-area: text-top;
+}
+
+.about-text--bottom {
+  grid-area: text-bottom;
+}
+
+.about-image {
+  grid-area: image;
+}
+
+/* Desktop: Text links, Bild rechts, Bild über beide Zeilen */
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas:
+      "text-top image"
+      "text-bottom image";
+    align-items: start;
+  }
+}
+
+/* Mobil: oben Text, dann Bild, dann unterer Text */
+@media (max-width: 767px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text-top"
+      "image"
+      "text-bottom";
+  }
+}
 
